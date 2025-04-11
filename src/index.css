@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-clip-path {
+  clip-path: path('M 0 350 Q 50 400 100 350 Q 150 300 200 350 Q 250 400 300 350 V 0 H 0 Z');
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
