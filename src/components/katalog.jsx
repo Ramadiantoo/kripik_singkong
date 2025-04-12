@@ -50,7 +50,7 @@ const Catalog = () => {
       <div className="container mx-auto px-4 flex flex-col items-center relative z-10">
         {/* Teks Tengah - Di atas di mobile, di tengah di non-mobile */}
         <div className="text-center w-full mb-8 relative -top-14">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-400">
             Pilih Varian Kripik Singkong Anda
           </h1>
         </div>
@@ -71,13 +71,13 @@ const Catalog = () => {
                 alt={products[leftProductIndex].name}
                 className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain mb-4"
               />
-              <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-white mb-2">
+              <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-orange-400 mb-2">
                 {products[leftProductIndex].name}
               </h3>
-              <p className="text-xs sm:text-sm md:text-lg text-gray-200 mb-4">
+              <p className="text-xs sm:text-sm md:text-lg text-orange-400 mb-4">
                 {products[leftProductIndex].description}
               </p>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition duration-300 text-xs sm:text-sm md:text-base">
+              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-white text-orange-500 font-semibold rounded-full hover:bg-orange-100 transition duration-300 text-xs sm:text-sm md:text-base">
                 Beli Sekarang
               </button>
             </motion.div>
@@ -97,13 +97,13 @@ const Catalog = () => {
                 alt={products[rightProductIndex].name}
                 className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain mb-4"
               />
-              <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-white mb-2">
+              <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-orange-400 mb-2">
                 {products[rightProductIndex].name}
               </h3>
-              <p className="text-xs sm:text-sm md:text-lg text-gray-200 mb-4">
+              <p className="text-xs sm:text-sm md:text-lg text-orange-400 mb-4">
                 {products[rightProductIndex].description}
               </p>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition duration-300 text-xs sm:text-sm md:text-base">
+              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-white text-orange-500 font-semibold rounded-full hover:bg-orange-100 transition duration-300 text-xs sm:text-sm md:text-base">
                 Beli Sekarang
               </button>
             </motion.div>

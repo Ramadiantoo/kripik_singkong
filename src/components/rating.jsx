@@ -5,19 +5,19 @@ import { useInView } from 'react-intersection-observer';
 const Rating = () => {
   const reviews = [
     {
-      name: 'Barbara G',
+      name: 'ALIF ',
       rating: 5,
-      comment: 'Nice flavor & just the right amount of bubbles!'
+      comment: 'MANTAP'
     },
     {
-      name: 'Kyle W',
+      name: 'DI',
       rating: 5,
-      comment: 'This one reminds me of amazing blueberry muffins. Delicious!'
+      comment: 'Delicious!'
     },
     {
-      name: 'Stephen C',
+      name: 'IMAM',
       rating: 5,
-      comment: 'I love all the zero-infused sparkling waters from Sacred, but this is my favorite.'
+      comment: 'This is my favorite.'
     }
   ];
 
@@ -49,9 +49,9 @@ const Rating = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-800 mb-12 text-center"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-100 mb-12 text-center"
       >
-        WHAT OTHERS SAY
+        RATING ORANG ORANG TERHADAP KAMI
       </motion.h1>
 
       <div ref={ref} className="flex flex-col gap-6 w-full max-w-2xl">
@@ -64,7 +64,7 @@ const Rating = () => {
             animate={controls}
             className={`relative rounded-[40px] px-6 py-8 text-center shadow-xl overflow-hidden ${
               index % 2 === 0 ? 'text-white' : 'text-gray-800'
-            } ${index === 1 ? 'bg-white' : 'bg-green-800'}`}
+            } ${index === 1 ? 'bg-white' : 'bg-orange-400'}`}
             style={{
               backgroundImage: index === 0 || index === 2 ? 'url(/images/bg-leaf.jpg)' : 'none',
               backgroundSize: 'cover',
