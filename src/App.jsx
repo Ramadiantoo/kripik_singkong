@@ -1,28 +1,18 @@
-import { useState } from 'react'
-import cuyLogo from './assets/logo.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainPage from './Pages/mainpage'; // Impor MainPage dari folder pages
 
 function App() {
-    const [count, setCount] = useState(0)
-
-    return (
-        <div className="App">
-        <div>
-            <a href="https://youtube.com/deaafrizal" target="_blank">
-            <img src={cuyLogo} className="logo cuy" alt="Cuy logo" />
-            </a>
-        </div>
-        <h1>🏆 REACTVITE PACK 🏆</h1>
-        <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-            realtime click {count}
-            </button>
-        </div>
-        <p className="read-the-docs">
-            how to run this pack: npm i & npm run dev on your terminal.
-        </p>
-        </div>
-    )
+  return (
+    <Router>
+      <Routes>
+        {/* Rute utama untuk MainPage */}
+        <Route path="/" element={<MainPage />} />
+        {/* Rute untuk 404 */}
+        <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

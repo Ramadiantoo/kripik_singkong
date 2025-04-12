@@ -1,1 +1,0 @@
-# kripik_singkong
