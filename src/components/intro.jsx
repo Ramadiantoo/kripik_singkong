@@ -3,11 +3,10 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Intro = () => {
-  // Animasi untuk teks saat scroll
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true, // Animasi hanya terjadi sekali saat elemen terlihat
-    threshold: 0.3, // Animasi dipicu saat 30% elemen terlihat
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   useEffect(() => {
@@ -16,18 +15,14 @@ const Intro = () => {
     }
   }, [controls, inView]);
 
-  // Variasi animasi untuk teks
   const textAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-200 to-orange-400">
-      <div
-        ref={ref}
-        className="text-center px-4 py-8 space-y-4 max-w-3xl mx-auto"
-      >
+    <div className="w-full min-h-screen flex items-center justify-center">
+      <div ref={ref} className="text-center px-4 py-8 space-y-4 max-w-3xl mx-auto">
         <motion.h1
           variants={textAnimation}
           initial="hidden"

@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   const slides = [
     {
-      image: '/images/kuning.jpeg',
+      image: '/images/ijo.png',
       title: 'KRIPIK',
       discount: 'Potongan 15%',
       description: 'DARI SINGKONG',
     },
     {
-      image: '/images/merah.jpeg',
+      image: '/images/kuning.png',
       title: 'KRIPIK INI',
       discount: 'DISKON 20%',
       description: 'DARI SINGKONG',
     },
     {
-      image: '/images/ijo.jpeg',
+      image: '/images/merah.png',
       title: 'INI KRIPIK',
       discount: 'Promo 10%',
       description: 'DARI SINGKONG',
@@ -33,91 +33,87 @@ const Hero = () => {
   }, [slides.length]);
 
   const imageAnimation = {
-    hidden: { opacity: 0, rotate: -180, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.5 },
     visible: {
       opacity: 1,
-      rotate: 0,
       scale: 1,
       transition: { duration: 1 },
     },
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-orange-400 flex items-center justify-center overflow-hidden">
+    <div className="relative w-full min-h-screen bg-amber-400 flex items-center justify-center overflow-hidden">
       {/* Konten Utama */}
-      <div className="container mx-auto flex flex-col lg:flex-row-reverse items-center justify-between px-4 py-12 md:py-16 z-10">
-        {/* Bagian Teks */}
-        <div className="text-center lg:text-left lg:w-1/2 space-y-4">
-          <motion.h3
-            key={slides[currentSlide].title}
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-12 md:py-16 z-10">
+        {/* Bagian Gambar di Kiri dengan Lingkaran Hitam Transparan */}
+        <div className="lg:w-1/2 flex justify-center lg:justify-start relative">
+          {/* Container dengan Dimensi Jelas */}
+          <div className="relative w-[200px] md:w-[250px] lg:w-[300px] h-[200px] md:h-[250px] lg:h-[300px] flex items-center justify-center">
+            {/* Lingkaran Hitam Transparan (Statis, Tidak Terkena Motion) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 md:w-60 lg:w-72 h-48 md:h-60 lg:h-72 bg-black/40 rounded-full z-0"></div>
+            {/* Gambar dengan Motion */}
+            <motion.div
+              key={slides[currentSlide].image}
+              variants={imageAnimation}
+              initial="hidden"
+              animate="visible"
+              className="relative z-10"
+            >
+              <img
+                src={slides[currentSlide].image}
+                alt="Product"
+                className="max-w-[200px] md:max-w-[250px] lg:max-w-[300px] h-auto object-contain z-10 relative"
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bagian Teks di Kanan */}
+        <div className="text-center lg:text-left lg:w-1/2 space-y-6 mt-8 lg:mt-0">
+          <motion.h1
+            key={slides[currentSlide].title + slides[currentSlide].discount}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-white text-lg md:text-xl font-light"
+            className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
           >
-            {slides[currentSlide].title}
-          </motion.h3>
-          <motion.h1
-            key={slides[currentSlide].discount}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-white text-4xl md:text-6xl lg:text-7xl font-bold"
-          >
-            {slides[currentSlide].discount}
+            {slides[currentSlide].title} <br /> {slides[currentSlide].discount}
           </motion.h1>
           <motion.p
             key={slides[currentSlide].description}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-white text-base md:text-lg"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-white text-base md:text-lg opacity-80"
           >
             {slides[currentSlide].description}
           </motion.p>
+          {/* Tombol */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex justify-center lg:justify-start"
+          >
+            <button className="bg-white text-amber-700 font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition">
+              Beli Sekarang
+            </button>
+          </motion.div>
         </div>
-
-        {/* Bagian Gambar di kiri atas, besar */}
-        <motion.div
-          key={slides[currentSlide].image}
-          variants={imageAnimation}
-          initial="hidden"
-          animate="visible"
-          className="absolute top-0 left-0 z-0 w-[250px] md:w-[350px] lg:w-[450px]"
-        >
-          <img
-            src={slides[currentSlide].image}
-            alt="Product"
-            className="w-full h-auto object-cover rounded-br-3xl shadow-lg"
-          />
-        </motion.div>
       </div>
 
       {/* Gelombang Putih */}
       <div className="absolute bottom-0 w-full h-[20%] bg-white">
         <svg
-          viewBox="0 0 1440 60"
-          className="absolute top-0 w-full h-20 md:h-28 -translate-y-full"
+          viewBox="0 0 1440 100"
+          className="absolute top-0 w-full h-24 md:h-32 -translate-y-full"
           preserveAspectRatio="none"
         >
           <path
             fill="#ffffff"
-            d="M0,60 L1440,60 L1440,20 C1080,45 720,35 360,45 C120,50 0,35 0,20 Z"
+            d="M0,100 L1440,100 L1440,40 C1080,80 720,60 360,80 C120,90 0,60 0,40 Z"
           />
         </svg>
-      </div>
-
-      {/* Tombol Navigasi Slide */}
-      <div className="absolute bottom-8 flex space-x-2 z-20">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === index ? 'bg-white' : 'bg-gray-300'
-            }`}
-          />
-        ))}
       </div>
     </div>
   );
