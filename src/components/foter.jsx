@@ -2,47 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 bg-orange-400 border-t border-gray-200 relative">
-      {/* Gelombang di Atas */}
-      <div className="absolute top-0 w-full">
-        <svg
-          viewBox="0 0 1440 100"
-          className="w-full h-24 md:h-32"
-          preserveAspectRatio="none"
-          style={{ transform: 'rotate(180deg)' }} // Memutar SVG 180 derajat
-        >
-          <path
-            fill="url(#pattern-footer)" // Fill menggunakan pattern untuk menyambung dengan background sebelumnya
-            d="M0,100 L1440,100 L1440,40 C1080,80 720,60 360,80 C120,90 0,60 0,40 Z"
-          />
-          {/* Overlay pada Path */}
-          <path
-            fill="rgba(0, 0, 0, 0.5)"
-            d="M0,100 L1440,100 L1440,40 C1080,80 720,60 360,80 C120,90 0,60 0,40 Z"
-          />
-          {/* Definisikan pattern untuk background image */}
-          <defs>
-            <pattern
-              id="pattern-footer"
-              patternUnits="userSpaceOnUse"
-              width="100%"
-              height="100%"
-            >
-              <image
-                href="/images/Patern.jpg"
-                width="1440"
-                height="100"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </pattern>
-          </defs>
-        </svg>
-      </div>
-
+    <footer className="w-full py-6 bg-orange-400 relative">
       {/* Konten Footer */}
       <div className="container mx-auto px-4 flex flex-col items-center text-center space-y-4 pt-12">
         {/* Nama Brand */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
           Kripik Singkong
         </h2>
 
@@ -52,11 +16,11 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800 transition duration-300"
+            className="text-gray-600 hover:text-white transition duration-300"
           >
             <svg
               className="w-6 h-6 sm:w-8 sm:h-8"
-              fill="currentColor"
+              fill="white"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -68,11 +32,11 @@ const Footer = () => {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800 transition duration-300"
+            className="text-gray-600 hover:text-white transition duration-300"
           >
             <svg
               className="w-6 h-6 sm:w-8 sm:h-8"
-              fill="currentColor"
+              fill="white"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -82,13 +46,13 @@ const Footer = () => {
         </div>
 
         {/* Nomor WhatsApp */}
-        <p className="text-sm sm:text-base md:text-lg text-gray-600">
+        <p className="text-sm sm:text-base md:text-lg text-white">
           Hubungi kami di WhatsApp:{' '}
           <a
             href="https://wa.me/6282258401156"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:underline"
+            className="text-white hover:underline"
           >
             +62 822-5840-1156
           </a>

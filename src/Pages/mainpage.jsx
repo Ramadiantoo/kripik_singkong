@@ -12,7 +12,7 @@ const MainPage = () => {
       {/* Bungkus Intro dan Catalog dalam div dengan background image */}
       <div
         className="w-full bg-cover bg-center relative"
-        style={{ backgroundImage: "url('/images/Patern.jpg')" }}
+        style={{ backgroundImage: "url('/images/BG.png')" }}
       >
         {/* Overlay untuk meningkatkan keterbacaan teks */}
         <div className="absolute inset-0 bg-black/50 z-0"></div>

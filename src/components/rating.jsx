@@ -49,7 +49,7 @@ const Rating = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-100 mb-12 text-center"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center"
       >
         RATING ORANG ORANG TERHADAP KAMI
       </motion.h1>
