@@ -4,19 +4,31 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   const slides = [
     {
+<<<<<<< Updated upstream
       image: '/images/ijo.png',
+=======
+      image: '/images/Keju.png',
+>>>>>>> Stashed changes
       title: 'KRIPIK',
       discount: 'Potongan 15%',
       description: 'DARI SINGKONG',
     },
     {
+<<<<<<< Updated upstream
       image: '/images/kuning.png',
+=======
+      image: '/images/Ori.png',
+>>>>>>> Stashed changes
       title: 'KRIPIK INI',
       discount: 'DISKON 20%',
       description: 'DARI SINGKONG',
     },
     {
+<<<<<<< Updated upstream
       image: '/images/merah.png',
+=======
+      image: '/images/Pedas.png',
+>>>>>>> Stashed changes
       title: 'INI KRIPIK',
       discount: 'Promo 10%',
       description: 'DARI SINGKONG',
@@ -100,6 +112,7 @@ const Hero = () => {
             </button>
           </motion.div>
         </div>
+<<<<<<< Updated upstream
       </div>
 
       {/* Gelombang Putih */}
@@ -114,7 +127,10 @@ const Hero = () => {
             d="M0,100 L1440,100 L1440,40 C1080,80 720,60 360,80 C120,90 0,60 0,40 Z"
           />
         </svg>
+=======
+>>>>>>> Stashed changes
       </div>
+
     </div>
   );
 };
