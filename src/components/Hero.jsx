@@ -3,9 +3,24 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const slides = [
-    { image: '/images/ijo.png' },
-    { image: '/images/kuning.png' },
-    { image: '/images/merah.png' },
+    {
+      image: '/images/Ori.png',
+      title: 'KRIPIK',
+      discount: 'Potongan 15%',
+      description: 'DARI SINGKONG',
+    },
+    {
+      image: '/images/Keju.png',
+      title: 'KRIPIK INI',
+      discount: 'DISKON 20%',
+      description: 'DARI SINGKONG',
+    },
+    {
+      image: '/images/Ori.png',
+      title: 'INI KRIPIK',
+      discount: 'Promo 10%',
+      description: 'DARI SINGKONG',
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -27,58 +42,64 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gambar Utama */}
-      <motion.div
-        key={slides[currentSlide].image}
-        variants={imageAnimation}
-        initial="hidden"
-        animate="visible"
-        className="w-full h-full flex items-center justify-center"
-      >
-        <img
-          src={slides[currentSlide].image}
-          alt="Product"
-          className="w-full h-auto max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-[80vh] object-contain"
-        />
-      </motion.div>
-
-      {/* Gelombang Putih di Bawah dengan Overlay */}
-      <div className="absolute bottom-0 w-full">
-        <svg
-          viewBox="0 0 1440 100"
-          className="w-full h-16 sm:h-20 md:h-24 lg:h-32"
-          preserveAspectRatio="none"
-        >
-          {/* Definisikan pattern untuk background image */}
-          <defs>
-            <pattern
-              id="pattern-hero"
-              patternUnits="userSpaceOnUse"
-              width="100%"
-              height="100%"
+    <div className="relative w-full min-h-screen bg-amber-400 flex items-center justify-center overflow-hidden">
+      {/* Konten Utama */}
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-12 md:py-16 z-10">
+        {/* Bagian Gambar di Kiri dengan Lingkaran Hitam Transparan */}
+        <div className="lg:w-1/2 flex justify-center lg:justify-start relative">
+          {/* Container dengan Dimensi Jelas */}
+          <div className="relative w-[200px] md:w-[250px] lg:w-[300px] h-[200px] md:h-[250px] lg:h-[300px] flex items-center justify-center">
+            {/* Lingkaran Hitam Transparan (Statis, Tidak Terkena Motion) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 md:w-60 lg:w-72 h-48 md:h-60 lg:h-72 bg-black/40 rounded-full z-0"></div>
+            {/* Gambar dengan Motion */}
+            <motion.div
+              key={slides[currentSlide].image}
+              variants={imageAnimation}
+              initial="hidden"
+              animate="visible"
+              className="relative z-10"
             >
-              <image
-                href="/images/Patern.jpg"
-                width="1440"
-                height="100"
-                preserveAspectRatio="xMidYMid slice"
+              <img
+                src={slides[currentSlide].image}
+                alt="Product"
+                className="max-w-[200px] md:max-w-[250px] lg:max-w-[300px] h-auto object-contain z-10 relative"
               />
-            </pattern>
-          </defs>
+            </motion.div>
+          </div>
+        </div>
 
-          {/* Path Gelombang */}
-          <path
-            fill="url(#pattern-hero)"
-            d="M0,100 L1440,100 L1440,40 C1080,80 720,60 360,80 C120,90 0,60 0,40 Z"
-          />
-
-          {/* Overlay pada Path */}
-          <path
-            fill="rgba(0, 0, 0, 0.5)" // Overlay semi-transparan hanya pada path
-            d="M0,100 L1440,100 L1440,40 C1080,80 720,60 360,80 C120,90 0,60 0,40 Z"
-          />
-        </svg>
+        {/* Bagian Teks di Kanan */}
+        <div className="text-center lg:text-left lg:w-1/2 space-y-6 mt-8 lg:mt-0">
+          <motion.h1
+            key={slides[currentSlide].title + slides[currentSlide].discount}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          >
+            {slides[currentSlide].title} <br /> {slides[currentSlide].discount}
+          </motion.h1>
+          <motion.p
+            key={slides[currentSlide].description}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-white text-base md:text-lg opacity-80"
+          >
+            {slides[currentSlide].description}
+          </motion.p>
+          {/* Tombol */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex justify-center lg:justify-start"
+          >
+            <button className="bg-white text-amber-700 font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition">
+              Beli Sekarang
+            </button>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
