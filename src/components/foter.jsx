@@ -2,12 +2,17 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 bg-white border-t border-gray-200">
-      <div className="container mx-auto px-4 flex flex-col items-center text-center space-y-4">
+    <footer className="w-full py-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-400 text-white">
+      <div className="container mx-auto px-6 lg:px-12 flex flex-col items-center text-center space-y-4">
         {/* Nama Brand */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
-          Kripik Singkong
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          KRESS <span className="text-red-900">Lezat</span>
         </h2>
+
+        {/* Deskripsi */}
+        <p className="text-sm sm:text-lg md:text-xl text-white opacity-80">
+          Nikmati kripik singkong dengan cita rasa yang tiada duanya, buat momenmu lebih spesial!
+        </p>
 
         {/* Logo Media Sosial */}
         <div className="flex space-x-4">
@@ -15,7 +20,7 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800 transition duration-300"
+            className="text-white hover:text-yellow-300 transition duration-300"
           >
             <svg
               className="w-6 h-6 sm:w-8 sm:h-8"
@@ -31,7 +36,7 @@ const Footer = () => {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800 transition duration-300"
+            className="text-white hover:text-yellow-300 transition duration-300"
           >
             <svg
               className="w-6 h-6 sm:w-8 sm:h-8"
@@ -45,16 +50,21 @@ const Footer = () => {
         </div>
 
         {/* Nomor WhatsApp */}
-        <p className="text-sm sm:text-base md:text-lg text-gray-600">
+        <p className="text-sm sm:text-base md:text-lg text-white">
           Hubungi kami di WhatsApp:{' '}
           <a
             href="https://wa.me/6281234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-600 hover:underline"
+            className="text-green-300 hover:underline"
           >
             +62 812-3456-7890
           </a>
+        </p>
+
+        {/* Copyright */}
+        <p className="text-xs sm:text-sm text-white opacity-70">
+          &copy; 2025 KRESS. Semua hak cipta dilindungi undang-undang.
         </p>
       </div>
     </footer>

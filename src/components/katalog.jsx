@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 const Catalog = () => {
   const products = [
     {
-      image: '/images/ijo.png',
+      image: '/images/Ori.png',
       name: 'Original',
       description: 'Rasa klasik yang renyah dan gurih',
     },
     {
-      image: '/images/kuning.png',
+      image: '/images/Pedas.png',
       name: 'Balado',
       description: 'Pedas manis khas Balado',
     },
     {
-      image: '/images/merah.png',
+      image: '/images/Keju.png',
       name: 'Keju',
       description: 'Keju meleleh di setiap gigitan',
     },
@@ -38,33 +38,21 @@ const Catalog = () => {
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center py-12 relative">
-      {/* Elemen Dekoratif Kiri */}
-      <div className="absolute left-0 top-0 h-full w-screen flex items-center z-0">
-        <div className="h-64 sm:h-72 md:h-80 w-[40%] sm:w-[35%] md:w-[30%] bg-white rounded-r-full"></div>
-      </div>
-      {/* Elemen Dekoratif Kanan */}
-      <div className="absolute right-0 top-0 h-full w-screen flex items-center justify-end z-0">
-        <div className="h-64 sm:h-72 md:h-80 w-[40%] sm:w-[35%] md:w-[30%] bg-white rounded-l-full"></div>
-      </div>
-
       <div className="container mx-auto px-4 flex flex-col items-center relative z-10">
-        {/* Teks Tengah - Di atas di mobile, di tengah di non-mobile */}
-        <div className="text-center w-full mb-8 relative -top-14">
+        <div className="text-center w-full mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            Pilih Varian Kripik Singkong Anda
+            Beli Sekarang Dan Pilih Varian Rasamu
           </h1>
         </div>
-
-        {/* Kontainer untuk Produk - Berdampingan di mobile dan non-mobile */}
-        <div className="w-full flex flex-row sm:flex-row justify-between sm:gap-4">
-          {/* Sisi Kiri - Produk 1 */}
-          <div className="flex flex-col items-center text-center w-1/2 sm:w-1/3 pr-2 sm:pr-0 sm:order-1">
+        <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col items-center text-center w-full sm:w-1/2 relative">
+            <div className="absolute left-0 top-0 h-full w-1/2 bg-red-900 rounded-r-full z-0"></div>
             <motion.div
               key={leftProductIndex}
               variants={productAnimation}
               initial="hidden"
               animate="visible"
-              className="flex flex-col items-center"
+              className="relative z-10 flex flex-col items-center"
             >
               <img
                 src={products[leftProductIndex].image}
@@ -74,23 +62,22 @@ const Catalog = () => {
               <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-white mb-2">
                 {products[leftProductIndex].name}
               </h3>
-              <p className="text-xs sm:text-sm md:text-lg text-gray-200 mb-4">
-                {products[leftProductIndex].description}
+              <p className="text-xs sm:text-sm md:text-lg text-white mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition duration-300 text-xs sm:text-sm md:text-base">
-                Beli Sekarang
+              <button className="px-6 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
+                BELI
               </button>
             </motion.div>
           </div>
-
-          {/* Sisi Kanan - Produk 2 */}
-          <div className="flex flex-col items-center text-center w-1/2 sm:w-1/3 pl-2 sm:pl-0 sm:order-3">
+          <div className="flex flex-col items-center text-center w-full sm:w-1/2 relative">
+            <div className="absolute right-0 top-0 h-full w-1/2 bg-red-900 rounded-l-full z-0"></div>
             <motion.div
               key={rightProductIndex}
               variants={productAnimation}
               initial="hidden"
               animate="visible"
-              className="flex flex-col items-center"
+              className="relative z-10 flex flex-col items-center"
             >
               <img
                 src={products[rightProductIndex].image}
@@ -100,11 +87,11 @@ const Catalog = () => {
               <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-white mb-2">
                 {products[rightProductIndex].name}
               </h3>
-              <p className="text-xs sm:text-sm md:text-lg text-gray-200 mb-4">
-                {products[rightProductIndex].description}
+              <p className="text-xs sm:text-sm md:text-lg text-white mb-4">
+                Ut adipiscing justo cursus in hac habitasse platea dictumst quisque sagittis.
               </p>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition duration-300 text-xs sm:text-sm md:text-base">
-                Beli Sekarang
+              <button className="px-6 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
+                BELI
               </button>
             </motion.div>
           </div>
