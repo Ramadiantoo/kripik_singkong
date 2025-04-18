@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.custom-clip-path {
-  clip-path: path('M 0 350 Q 50 400 100 350 Q 150 300 200 350 Q 250 400 300 350 V 0 H 0 Z');
+h1,h2 {
+  @apply font-knewave;
+}
+
+h1 span.lowercase {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {

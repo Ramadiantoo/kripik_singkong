@@ -51,7 +51,7 @@ const Rating = () => {
         transition={{ duration: 0.8 }}
         className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center"
       >
-        RATING ORANG ORANG TERHADAP KAMI
+        Testimoni dan review Orang terhadap Kress
       </motion.h1>
 
       <div ref={ref} className="flex flex-col gap-6 w-full max-w-2xl">

@@ -6,25 +6,25 @@ const Hero = () => {
     {
       image: '/images/KORI.png',
       background: '/images/bgor.png',
-      title: 'KRIPIK ORIGINAL',
-      discount: 'Diskon 15%',
-      description: 'Kripik singkong asli dengan rasa otentik yang renyah',
+      title: 'Kress Original',
+      // discount: 'Diskon 15%',
+      description: 'Renyahnya kripik singkong asli dengan cita rasa alami yang bikin waktu santai makin spesial.',
       buttonText: 'Pesan Sekarang',
     },
     {
       image: '/images/KKEJU.png',
       background: '/images/bgkj.png',
-      title: 'KRIPIK KEJU',
-      discount: 'Diskon 20%',
-      description: 'Kripik singkong dengan taburan keju lezat',
+      title: 'Kress Keju',
+      // discount: 'Diskon 20%',
+      description: 'Kripik singkong dengan lapisan keju creamy yang lumer di mulut, sempurna untuk ngemil kapan saja.',
       buttonText: 'Beli Sekarang',
     },
     {
       image: '/images/KPEDES.png',
       background: '/images/bgpd.png',
-      title: 'KRIPIK PEDAS',
+      title: 'Kress Pedas',
       discount: 'Promo 10%',
-      description: 'Kripik singkong dengan sensasi pedas menggigit',
+      description: 'Kripik singkong dengan ledakan rasa pedas yang nendang, cocok untuk pecinta tantangan.',
       buttonText: 'Order Now',
     },
   ];
@@ -79,9 +79,9 @@ const Hero = () => {
       <div className="relative container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-12 md:py-16 z-10 min-h-screen">
         {/* Bagian Gambar di Kiri */}
         <div className="lg:w-1/2 flex justify-center lg:justify-start relative">
-          <div className="relative w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] flex items-center justify-center">
+          <div className="relative w-[350px] md:w-[400px] lg:w-[500px] h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
             {/* Lingkaran Dekoratif */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 md:w-72 lg:w-80 h-56 md:h-72 lg:h-80 bg-amber-400/30 rounded-full z-0"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 md:w-96 lg:w-[600px] h-72 md:h-96 lg:h-[600px] bg-amber-400/30 rounded-full z-0"></div>
             {/* Gambar Produk */}
             <AnimatePresence>
               <motion.div
@@ -95,7 +95,7 @@ const Hero = () => {
                 <img
                   src={slides[currentSlide].image}
                   alt="Product"
-                  className="max-w-[250px] md:max-w-[300px] lg:max-w-[350px] h-auto object-contain"
+                  className="max-w-[280px] md:max-w-[480px] lg:max-w-[500px] h-auto object-contain"
                 />
               </motion.div>
             </AnimatePresence>
@@ -103,7 +103,11 @@ const Hero = () => {
         </div>
 
         {/* Bagian Teks di Kanan */}
-        <div className="text-center lg:text-left lg:w-1/2 space-y-6 mt-8 lg:mt-0">
+        <div className="text-center lg:text-left lg:w-1/2 space-y-6 mt-8 lg:mt-0 lg:ml-8">
+          {/* Headline Produk */}
+          <div className="text-white text-xl md:text-2xl lg:text-6xl font-knewave  opacity-90 mb-4">
+            Cemilan Renyah Teman Setia Waktu Santai, BIKIN NAGIH!
+          </div>
           <AnimatePresence>
             <motion.h1
               key={slides[currentSlide].title}
@@ -117,7 +121,7 @@ const Hero = () => {
             </motion.h1>
           </AnimatePresence>
           <AnimatePresence>
-            <motion.p
+            <motion.h2
               key={slides[currentSlide].discount}
               variants={textAnimation}
               initial="hidden"
@@ -126,7 +130,7 @@ const Hero = () => {
               className="text-amber-300 text-2xl md:text-3xl font-semibold"
             >
               {slides[currentSlide].discount}
-            </motion.p>
+            </motion.h2>
           </AnimatePresence>
           <AnimatePresence>
             <motion.p
@@ -150,7 +154,7 @@ const Hero = () => {
               exit="exit"
               className="flex justify-center lg:justify-start"
             >
-              <button className="bg-amber-400 text-black font-semibold py-3 px-8 rounded-full hover:bg-amber-300 transition duration-300">
+              <button className="bg-amber-400 text-white font-poppins py-3 px-8 rounded-full hover:bg-amber-300 transition duration-300">
                 {slides[currentSlide].buttonText}
               </button>
             </motion.div>

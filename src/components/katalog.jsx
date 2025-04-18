@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const Catalog = () => {
   const products = [
     {
-      image: '/images/Ori.png',
-      name: 'Original',
-      description: 'Rasa klasik yang renyah dan gurih',
+      image: '/images/brw.png',
+      name: 'Rasa Original - Cita Rasa Alami',
+      description: 'Renyah, alami, dan bikin santai makin berarti. Camilan jujur tanpa drama.',
     },
     {
-      image: '/images/Pedas.png',
-      name: 'Balado',
-      description: 'Pedas manis khas Balado',
+      image: '/images/red.png',
+      name: 'Rasa Pedas - Untuk Pecinta Tantangan',
+      description: 'Ledakan pedas di tiap gigitan. Buat yang berani, ini camilan lo!',
     },
     {
-      image: '/images/Keju.png',
-      name: 'Keju',
-      description: 'Keju meleleh di setiap gigitan',
+      image: '/images/ylw.png',
+      name: 'Rasa Keju - Creamy dan Lumer',
+      description: 'Singkong renyah ketemu keju lumer—ngemil jadi makin dreamy!',
     },
   ];
 
@@ -63,7 +63,7 @@ const Catalog = () => {
                 {products[leftProductIndex].name}
               </h3>
               <p className="text-xs sm:text-sm md:text-lg text-white mb-2 max-w-md px-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {products[leftProductIndex].description}
               </p>
               <button className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
                 BELI
@@ -88,9 +88,10 @@ const Catalog = () => {
                 {products[rightProductIndex].name}
               </h3>
               <p className="text-xs sm:text-sm md:text-lg text-white mb-2 max-w-md px-6">
-                Ut adipiscing justo cursus in hac habitasse platea dictumst quisque sagittis.
+                {products[rightProductIndex].description}
               </p>
-              <button className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
+
+              <button className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
                 BELI
               </button>
             </motion.div>

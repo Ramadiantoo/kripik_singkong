@@ -11,7 +11,7 @@ const Footer = () => {
 
         {/* Deskripsi */}
         <p className="text-sm sm:text-lg md:text-xl text-white opacity-80">
-          Nikmati kripik singkong dengan cita rasa yang tiada duanya, buat momenmu lebih spesial!
+        Petualangan Rasa Kress menantimu! Follow kami & temukan kejutan seru tiap hari!
         </p>
 
         {/* Logo Media Sosial */}
