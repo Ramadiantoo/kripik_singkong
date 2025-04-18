@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 
 const Intro = () => {
   const controls = useAnimation();
@@ -8,6 +9,7 @@ const Intro = () => {
     triggerOnce: true,
     threshold: 0.3,
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (inView) {
@@ -18,6 +20,10 @@ const Intro = () => {
   const textAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  };
+
+  const handleButtonClick = () => {
+    navigate('/aboutus');
   };
 
   return (
@@ -55,6 +61,7 @@ const Intro = () => {
           animate={controls}
           transition={{ delay: 0.6 }}
           className="mt-4 px-6 py-3 bg-white text-orange-500 font-poppins rounded-full hover:bg-orange-100 transition duration-300 text-sm sm:text-base md:text-lg"
+          onClick={handleButtonClick}
         >
           Tentang Kress
         </motion.button>

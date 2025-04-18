@@ -46,7 +46,7 @@ const Catalog = () => {
         </div>
         <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex flex-col items-center text-center w-full sm:w-1/2 relative">
-          <div className="absolute left-0 top-1/2 h-4/6 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-r-full z-0 -translate-y-1/2"></div>
+            <div className="absolute left-0 top-1/2 h-4/6 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-r-full z-0 -translate-y-1/2"></div>
             <motion.div
               key={leftProductIndex}
               variants={productAnimation}
@@ -65,13 +65,18 @@ const Catalog = () => {
               <p className="text-xs sm:text-sm md:text-lg text-white mb-2 max-w-md px-6">
                 {products[leftProductIndex].description}
               </p>
-              <button className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
+              <a
+                href="https://wa.me/+6282258401156"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
+              >
                 BELI
-              </button>
+              </a>
             </motion.div>
           </div>
           <div className="flex flex-col items-center text-center w-full sm:w-1/2 relative">
-          <div className="absolute right-0 top-1/2 h-4/6 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-l-full z-0 -translate-y-1/2"></div>
+            <div className="absolute right-0 top-1/2 h-4/6 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-l-full z-0 -translate-y-1/2"></div>
             <motion.div
               key={rightProductIndex}
               variants={productAnimation}
@@ -90,10 +95,14 @@ const Catalog = () => {
               <p className="text-xs sm:text-sm md:text-lg text-white mb-2 max-w-md px-6">
                 {products[rightProductIndex].description}
               </p>
-
-              <button className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
+              <a
+                href="https://wa.me/+6282258401156"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
+              >
                 BELI
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

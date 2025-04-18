@@ -1,47 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Rating = () => {
-  const reviews = [
-    {
-      name: 'ALIF ',
-      rating: 5,
-      comment: 'MANTAP'
-    },
-    {
-      name: 'DI',
-      rating: 5,
-      comment: 'Delicious!'
-    },
-    {
-      name: 'IMAM',
-      rating: 5,
-      comment: 'This is my favorite.'
-    }
+  const images = [
+    '/Review/satu.jpg',
+    '/Review/dua.jpg',
+    '/Review/tiga.jpg',
   ];
+
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   useEffect(() => {
-    if (inView) controls.start('visible');
+    if (inView) {
+      controls.start('visible');
+    }
   }, [controls, inView]);
 
-  const reviewAnimation = {
-    hidden: { opacity: 0, y: 50 },
-    visible: i => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay: i * 0.3, ease: 'easeOut' }
-    })
+  // Animation for the scrolling images
+  const scrollAnimation = {
+    animate: {
+      x: ['0%', '-30%'],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration: 20, // Adjust speed of scrolling
+          ease: 'linear',
+        },
+      },
+    },
   };
 
-  const bgStyles = [
-    'bg-[url(/images/review1.jpg)]',
-    'bg-white',
-    'bg-[url(/images/review3.jpg)]'
-  ];
+  // Close modal when clicking outside the image
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center py-16 px-4">
@@ -54,45 +51,54 @@ const Rating = () => {
         Testimoni dan review Orang terhadap Kress
       </motion.h1>
 
-      <div ref={ref} className="flex flex-col gap-6 w-full max-w-2xl">
-        {reviews.map((review, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            variants={reviewAnimation}
-            initial="hidden"
-            animate={controls}
-            className={`relative rounded-[40px] px-6 py-8 text-center shadow-xl overflow-hidden ${
-              index % 2 === 0 ? 'text-white' : 'text-gray-800'
-            } ${index === 1 ? 'bg-white' : 'bg-orange-400'}`}
-            style={{
-              backgroundImage: index === 0 || index === 2 ? 'url(/images/bg-leaf.jpg)' : 'none',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          >
-            <p className="text-md sm:text-lg mb-4 italic">{review.comment}</p>
-            <div className="flex justify-center mb-2">
-              {[...Array(review.rating)].map((_, i) => (
-                <svg
-                  key={i}
-                  className="w-5 h-5 text-yellow-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.287 3.971c.3.921-.755 1.688-1.539 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.784.57-1.838-.197-1.539-1.118l1.287-3.971a1 1 0 00-.364-1.118L2.236 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z" />
-                </svg>
-              ))}
+      <div ref={ref} className="w-full overflow-hidden">
+        <motion.div
+          className="flex"
+          variants={scrollAnimation}
+          animate="animate"
+          style={{ width: `${images.length * 100}%` }}
+        >
+          {/* Duplicate images to create seamless loop */}
+          {[...images, ...images].map((src, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 mx-2 md:mx-4"
+              style={{ width: '400px', height: '350px', md: { width: '650px', height: '550px' } }}
+            >
+              <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-3 md:p-4 shadow-lg cursor-pointer">
+                <img
+                  src={src}
+                  alt={`Review ${index + 1}`}
+                  className="w-full h-full object-cover rounded-2xl"
+                  onClick={() => setSelectedImage(src)}
+                />
+              </div>
             </div>
-            <h3 className="text-xl font-semibold">{review.name}</h3>
-
-            {/* Ornamental Bubble */}
-            <div className="absolute w-32 h-32 bg-white opacity-40 rounded-full -z-10" style={{ top: '-2rem', left: '-2rem' }} />
-            <div className="absolute w-20 h-20 bg-white opacity-30 rounded-full -z-10" style={{ bottom: '-2rem', right: '-1rem' }} />
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </div>
+
+      {/* Modal for enlarged image */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={handleCloseModal}
+        >
+          <div className="relative max-w-3xl w-full mx-4">
+            <img
+              src={selectedImage}
+              alt="Enlarged Review"
+              className="w-full h-auto rounded-lg"
+            />
+            <button
+              className="absolute top-2 right-2 bg-white/20 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-white/40"
+              onClick={handleCloseModal}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

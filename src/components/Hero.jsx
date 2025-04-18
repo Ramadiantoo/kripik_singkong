@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const slides = [
@@ -60,6 +61,37 @@ const Hero = () => {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
+      {/* Glassmorphism Header */}
+      <header className="fixed top-0 left-0 w-full z-20 bg-white/10 backdrop-blur-md shadow-lg">
+        <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+          {/* Logo and Kress Text */}
+          <div className="flex items-center space-x-3">
+            <img
+              src="LOGO.png"
+              alt="Kress Logo"
+              className="w-10 h-10 object-contain"
+            />
+            <span className="text-white text-2xl font-bold font-knewave">Kress</span>
+          </div>
+          {/* Navigation Links */}
+          <nav className="flex items-center space-x-6">
+            <Link
+              to="/"
+              className="text-white text-lg font-poppins hover:text-amber-300 transition duration-300"
+            >
+              Beranda
+            </Link>
+            <Link
+              to="/aboutus"
+              className="text-white text-lg font-poppins hover:text-amber-300 transition duration-300"
+            >
+              Tentang Kami
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      {/* Existing Hero Content */}
       <AnimatePresence>
         <motion.div
           key={currentSlide}
@@ -76,7 +108,7 @@ const Hero = () => {
       </AnimatePresence>
 
       {/* Konten Utama */}
-      <div className="relative container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-12 md:py-16 z-10 min-h-screen">
+      <div className="relative container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-12 md:py-16 z-10 min-h-screen pt-20">
         {/* Bagian Gambar di Kiri */}
         <div className="lg:w-1/2 flex justify-center lg:justify-start relative">
           <div className="relative w-[350px] md:w-[400px] lg:w-[500px] h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
@@ -105,7 +137,7 @@ const Hero = () => {
         {/* Bagian Teks di Kanan */}
         <div className="text-center lg:text-left lg:w-1/2 space-y-6 mt-8 lg:mt-0 lg:ml-8">
           {/* Headline Produk */}
-          <div className="text-white text-xl md:text-2xl lg:text-6xl font-knewave  opacity-90 mb-4">
+          <div className="text-white text-xl md:text-2xl lg:text-6xl font-knewave opacity-90 mb-4">
             Cemilan Renyah Teman Setia Waktu Santai, BIKIN NAGIH!
           </div>
           <AnimatePresence>
@@ -154,9 +186,14 @@ const Hero = () => {
               exit="exit"
               className="flex justify-center lg:justify-start"
             >
-              <button className="bg-amber-400 text-white font-poppins py-3 px-8 rounded-full hover:bg-amber-300 transition duration-300">
+              <a
+                href="https://wa.me/+6282258401156"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-amber-400 text-white font-poppins py-3 px-8 rounded-full hover:bg-amber-300 transition duration-300"
+              >
                 {slides[currentSlide].buttonText}
-              </button>
+              </a>
             </motion.div>
           </AnimatePresence>
         </div>

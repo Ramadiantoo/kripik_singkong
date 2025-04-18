@@ -9,7 +9,7 @@ const MainPage = () => {
   return (
     <div className="w-full">
       <Hero />
-      {/* Bungkus Intro dan Catalog dalam div dengan background image */}
+      {/* Bungkus dalam div dengan background image */}
       <div
         className="w-full bg-cover bg-center relative"
         style={{ backgroundImage: "url('/images/BG.png')" }}
@@ -23,7 +23,6 @@ const MainPage = () => {
           <Rating />
         </div>
       </div>
-      
       <Footer />
     </div>
   );
