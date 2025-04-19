@@ -1,6 +1,6 @@
 import React from 'react';
 import Intro from '../components/intro';
-import Hero from '../components/hero';
+import Hero from '../components/Hero';
 import Catalog from '../components/katalog';
 import Rating from '../components/rating';
 import Footer from '../components/foter';
