@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-400 text-white">
+    <footer className="w-full py-4 bg-gradient-to-r from-orange-800 via-amber-700 to-orange-800 text-white">
       <div className="container mx-auto px-6 lg:px-12 flex flex-col items-center text-center space-y-4">
         {/* Nama Brand */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-          KRESS <span className="text-red-900">Lezat</span>
+          KRESS <span className="text-yellow-300">Lezat</span>
         </h2>
 
         {/* Deskripsi */}
