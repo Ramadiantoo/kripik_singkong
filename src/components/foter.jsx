@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12 flex flex-col items-center text-center space-y-4">
         {/* Nama Brand */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-          KRESS <span className="text-yellow-300">Lezat</span>
+          KRESS <span className="text-yellow-400">Lezat</span>
         </h2>
 
         {/* Deskripsi */}
