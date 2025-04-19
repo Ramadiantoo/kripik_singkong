@@ -7,16 +7,19 @@ const Catalog = () => {
       image: '/images/brw.png',
       name: 'Rasa Original - Cita Rasa Alami',
       description: 'Renyah, alami, dan bikin santai makin berarti. Camilan jujur tanpa drama.',
+      price: 'Rp10.000',
     },
     {
       image: '/images/red.png',
       name: 'Rasa Pedas - Untuk Pecinta Tantangan',
       description: 'Ledakan pedas di tiap gigitan. Buat yang berani, ini camilan lo!',
+      price: 'Rp12.000',
     },
     {
       image: '/images/ylw.png',
       name: 'Rasa Keju - Creamy dan Lumer',
       description: 'Singkong renyah ketemu keju lumer—ngemil jadi makin dreamy!',
+      price: 'Rp13.000',
     },
   ];
 
@@ -45,8 +48,9 @@ const Catalog = () => {
           </h1>
         </div>
         <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-2">
+          {/* Left Product */}
           <div className="flex flex-col items-center text-center w-full sm:w-1/2 relative">
-            <div className="absolute left-0 top-1/2 h-4/6 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-r-full z-0 -translate-y-1/2"></div>
+            <div className="absolute left-0 top-1/2 h-4/5 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-r-full z-0 -translate-y-1/2"></div>
             <motion.div
               key={leftProductIndex}
               variants={productAnimation}
@@ -62,6 +66,9 @@ const Catalog = () => {
               <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-white mb-0">
                 {products[leftProductIndex].name}
               </h3>
+              <h2 className="text-sm sm:text-base md:text-3xl font-bold text-red-700 mb-1">
+                {products[leftProductIndex].price}
+              </h2>
               <p className="text-xs sm:text-sm md:text-lg text-white mb-2 max-w-md px-6">
                 {products[leftProductIndex].description}
               </p>
@@ -75,14 +82,16 @@ const Catalog = () => {
               </a>
             </motion.div>
           </div>
+
+          {/* Right Product */}
           <div className="flex flex-col items-center text-center w-full sm:w-1/2 relative">
-            <div className="absolute right-0 top-1/2 h-4/6 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-l-full z-0 -translate-y-1/2"></div>
+            <div className="absolute right-0 top-1/2 h-4/5 w-4/5 backdrop-blur-md bg-black/30 shadow-sm rounded-l-full z-0 -translate-y-1/2"></div>
             <motion.div
               key={rightProductIndex}
               variants={productAnimation}
               initial="hidden"
               animate="visible"
-              className="relative z-10 flex flex-col items-center"
+              className="relative z-10 flex flex-col items-center text-center"
             >
               <img
                 src={products[rightProductIndex].image}
@@ -92,6 +101,9 @@ const Catalog = () => {
               <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-white mb-0">
                 {products[rightProductIndex].name}
               </h3>
+              <h2 className="text-sm sm:text-base md:text-3xl font-bold text-red-700 mb-1">
+                {products[rightProductIndex].price}
+              </h2>
               <p className="text-xs sm:text-sm md:text-lg text-white mb-2 max-w-md px-6">
                 {products[rightProductIndex].description}
               </p>
