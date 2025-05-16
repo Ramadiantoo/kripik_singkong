@@ -47,9 +47,9 @@ const About = () => {
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center"
-        style={{ 
-          backgroundImage: 'url(/images/bgpd.png)', 
-          transform: 'rotate(180deg)' 
+        style={{
+          backgroundImage: 'url(/images/bgpd.png)',
+          transform: 'rotate(180deg)'
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -73,15 +73,18 @@ const About = () => {
             transition={{ delay: 0.2 }}
             className="text-white text-xs sm:text-sm md:text-base font-poppins opacity-90 leading-relaxed"
           >
+            <strong>Kress</strong> adalah proyek yang dibuat untuk memenuhi tugas mata kuliah <strong>Digital Business</strong>, dengan anggota tim: <br />
+            <strong>Azhar Rizqullah (22.11.4981)</strong>, <strong>Muhammad Ramadianto (22.11.4945)</strong>, <strong>Bagas Dwi Saputra (22.11.4995)</strong>, <strong>Alief Khairul Fadzli (22.11.4983)</strong>, dan <strong>Imam Mashduqi (22.11.4946)</strong>.<br /><br />
+
             Kress adalah merek kripik singkong lokal Indonesia yang lahir dari kreativitas sekelompok mahasiswa IT dalam mengerjakan tugas kelas. Tugas kami sederhana namun menantang: mengubah sebuah produk tradisional menjadi sesuatu yang relevan di dunia digital. Dari sinilah Kress tercipta, sebuah merek kripik singkong yang menggabungkan cita rasa autentik Indonesia dengan pendekatan digital yang inovatif. Nama Kress, yang terinspirasi dari kata "crisp," mencerminkan tekstur renyah kripik kami sekaligus semangat kami untuk menghadirkan sesuatu yang segar.<br /><br />
-            
+
             Kress resmi diluncurkan pada 15 April 2025, tepat tiga hari yang lalu, sebagai bagian dari proyek kuliah kami. Meski baru lahir, kami berambisi membawa kripik singkong ke level baru dengan memanfaatkan teknologi digital. Kami memilih singkong sebagai bahan utama karena ingin mendukung petani lokal dan mempromosikan kekayaan kuliner Indonesia. Setiap keping kripik Kress dibuat dari singkong pilihan yang kami dapatkan dari petani di [misalnya: sekitar Bandung, Jawa Barat], yang kami olah dengan resep sederhana namun penuh perhatian.<br /><br />
-            
+
             Kami meluncurkan tiga varian rasa yang dirancang untuk mencuri perhatian: Original, yang menonjolkan cita rasa alami singkong; Keju, dengan sentuhan keju creamy yang bikin lumer; dan Pedas, untuk mereka yang suka tantangan dengan sensasi pedas yang pas. Ketiga rasa ini adalah hasil eksperimen kami di dapur kecil kampus, di mana kami menghabiskan malam-malam panjang untuk menyempurnakan resep sambil mengerjakan coding untuk platform digital Kress.<br /><br />
-            
+
             Sebagai mahasiswa IT, kami tidak hanya fokus pada rasa, tetapi juga pada bagaimana Kress bisa hadir di dunia digital. Tiga hari lalu, kami merilis situs web sederhana dan akun media sosial Kress untuk memperkenalkan produk ini. Kami juga sedang mengembangkan fitur pemesanan online yang memungkinkan pelanggan memesan kripik langsung dari ponsel mereka. Ini adalah langkah awal kami untuk membawa Kress lebih dekat ke masyarakat, meski saat ini produksi masih dilakukan dalam skala kecil di [misalnya: dapur bersama kampus atau UMKM lokal yang kami ajak kerja sama].<br /><br />
 
-            Kress adalah cerminan semangat kami untuk belajar dan berinovasi. Meski ini hanya proyek tugas, kami berkomitmen menjaga kualitas dengan memastikan singkong yang digunakan segar dan proses produksi higienis. Produk kami belum terdaftar di BPOM atau MUI karena masih dalam tahap awal, tapi kami sedang mempelajari prosesnya untuk memenuhi standar keamanan pangan di masa depan. Untuk saat ini, Kress tersedia dalam jumlah terbatas melalui pre-order di  WhatsApp +62822-5840-1156].<br /><br />
+            Kress adalah cerminan semangat kami untuk belajar dan berinovasi. Meski ini hanya proyek tugas, kami berkomitmen menjaga kualitas dengan memastikan singkong yang digunakan segar dan proses produksi higienis. Produk kami belum terdaftar di BPOM atau MUI karena masih dalam tahap awal, tapi kami sedang mempelajari prosesnya untuk memenuhi standar keamanan pangan di masa depan. Untuk saat ini, Kress tersedia dalam jumlah terbatas melalui pre-order di WhatsApp +62822-5840-1156.<br /><br />
 
             Harga Kress dibuat terjangkau untuk sesama mahasiswa dan pecinta camilan, dengan kemasan yang praktis untuk dibawa ke kelas atau nongkrong. Kami tahu perjalanan ini baru dimulai, dan masih banyak yang harus kami pelajari—baik dari sisi produksi maupun pemasaran digital. Tapi kami excited untuk melihat bagaimana Kress bisa berkembang, berkat dukungan dari teman, keluarga, dan komunitas kampus.
           </motion.p>

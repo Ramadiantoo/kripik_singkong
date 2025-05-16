@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Logo Media Sosial */}
         <div className="flex space-x-4">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/kres.sid?igsh=MW1jMnFreWI5djNjZA=="
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-yellow-300 transition duration-300"
