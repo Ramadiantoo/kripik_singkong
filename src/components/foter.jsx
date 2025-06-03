@@ -42,7 +42,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-300 hover:underline">
-            +62 812-3456-7890
+            +62 857-9430-4408
           </a>
         </p>
 
