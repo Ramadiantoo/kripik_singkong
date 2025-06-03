@@ -32,32 +32,16 @@ const Footer = () => {
               <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
             </svg>
           </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-yellow-300 transition duration-300"
-          >
-            <svg
-              className="w-6 h-6 sm:w-8 sm:h-8"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 2.04c-5.523 0-10 4.477-10 10 0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.891h2.54v-2.203c0-2.506 1.492-3.891 3.777-3.891 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.877h2.773l-.443 2.891h-2.33v6.988c4.781-.75 8.437-4.887 8.437-9.878 0-5.523-4.477-10-10-10z" />
-            </svg>
-          </a>
         </div>
 
         {/* Nomor WhatsApp */}
         <p className="text-sm sm:text-base md:text-lg text-white">
           Hubungi kami di WhatsApp:{' '}
           <a
-            href="https://wa.me/6281234567890"
+            href={`https://wa.me/6285794304408?text=${encodeURIComponent('halo kress saya ingin membeli produk unggulan anda apa yang harus saya lakukan')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-300 hover:underline"
-          >
+            className="text-green-300 hover:underline">
             +62 812-3456-7890
           </a>
         </p>

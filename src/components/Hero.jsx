@@ -187,11 +187,11 @@ const Hero = () => {
               className="flex justify-center lg:justify-start"
             >
               <a
-                href="https://wa.me/+6282258401156"
+                href={`https://wa.me/6285794304408?text=${encodeURIComponent(`Halo Kress! Saya ingin membeli produk anda.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-400 text-white font-poppins py-3 px-8 rounded-full hover:bg-amber-300 transition duration-300"
-              >
+                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
+                >
                 {slides[currentSlide].buttonText}
               </a>
             </motion.div>

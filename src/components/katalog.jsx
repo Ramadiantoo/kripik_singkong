@@ -73,11 +73,11 @@ const Catalog = () => {
                 {products[leftProductIndex].description}
               </p>
               <a
-                href="https://wa.me/+6282258401156"
+                href={`https://wa.me/6285794304408?text=${encodeURIComponent(`Halo Kress! Saya ingin membeli ${products[leftProductIndex].name}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-semibold rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
-              >
+                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
+                >
                 BELI
               </a>
             </motion.div>
@@ -108,11 +108,10 @@ const Catalog = () => {
                 {products[rightProductIndex].description}
               </p>
               <a
-                href="https://wa.me/+6282258401156"
+               href={`https://wa.me/6285794304408?text=${encodeURIComponent(`Halo Kress! Saya ingin membeli ${products[rightProductIndex].name}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base"
-              >
+                className="mt-2 px-14 py-2 bg-yellow-400 text-red-900 font-poppins rounded-full hover:bg-yellow-500 transition duration-300 text-sm md:text-base">
                 BELI
               </a>
             </motion.div>
